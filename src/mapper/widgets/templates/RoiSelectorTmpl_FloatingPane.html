@@ -1,0 +1,28 @@
+<div class="layerSelector">
+    <div data-dojo-type="dojox/layout/FloatingPane" data-dojo-attach-point="floatingPane" 
+        style="position:absolute;top:40%;right:30%;width:240px;height:180px;visibility:hidden"
+        data-dojo-props="dockable:false,closable:false,resizable:false,title:'Select ROI'">
+        <div style="width:100%;height:100%;">
+            <div data-dojo-type="dijit/Toolbar" style="height:105px">
+                <div data-dojo-attach-point="rectangle" data-dojo-type="dijit/form/Button" data-dojo-props="iconClass:'rectangleIcon', showLabel:false">
+                    Rectangle
+                </div>
+                <div data-dojo-attach-point="polygon" data-dojo-type="dijit/form/Button" data-dojo-props="iconClass:'polyIcon', showLabel:false">
+                    Polygon
+                </div>
+                <div data-dojo-attach-point="ellipse" data-dojo-type="dijit.form.Button" data-dojo-props="iconClass:'ellipseIcon', showLabel:false">
+                    Freehand
+                </div>
+                <div data-dojo-attach-point="clear" data-dojo-type="dijit.form.Button" data-dojo-props="iconClass:'ellipseIcon', showLabel:false">
+                    Clear
+                </div>
+            </div>
+            <button style="float:left" data-dojo-type="dijit/form/Button" type="submit" data-dojo-attach-point="cancelButton">
+                Cancel
+            </button>
+            <button style="float:right" data-dojo-type="dijit/form/Button" type="submit" data-dojo-attach-point="finishButton">
+                Finish
+            </button>
+        </div>
+    </div>
+</div>

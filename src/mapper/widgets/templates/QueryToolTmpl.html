@@ -1,0 +1,26 @@
+<div class="find-tool">
+    
+    <label>Search Region:</label>
+    <div class="dijit dijitInline" style="color:#F89406" data-dojo-attach-point="searchRegion"></div>
+    
+    <p></p>
+    
+    <label>Search Term:</label>
+    <input data-dojo-type="dijit/form/ValidationTextBox" data-dojo-attach-point="findText" placeholder=""
+        missingMessage="Searching without attribute matching" type="text" required="false"/>
+    
+    <p></p>
+    
+    <label>Search Layers:</label>
+    <div data-dojo-attach-point="layerSelectorContainer"></div>
+    
+    
+    <p><br/></p>
+    
+    <button 
+        data-dojo-type="dojox/form/BusyButton" 
+        data-dojo-attach-point="searchButton" 
+        data-dojo-props="busyLabel:'Please wait..'">
+        Search
+    </button>
+</div>

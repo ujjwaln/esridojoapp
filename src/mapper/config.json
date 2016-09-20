@@ -1,0 +1,20 @@
+{
+    "map_elemId": "map",
+    "nav_elemId": "nav-nav",
+    "tools_elemId": "nav-tools",
+    "layersControl_elemId": "toc",
+    "baseMaps": [
+        { id: "1", label: "BK", url: "http://arcgisnycwcsql/ArcGIS/rest/services/st/bk_st/MapServer" },
+        { id: "2", label: "BX", url: "http://arcgisnycwcsql/ArcGIS/rest/services/st/bx_st/MapServer" },
+        { id: "3", label: "QN", url: "http://arcgisnycwcsql/ArcGIS/rest/services/st/qn_st/MapServer" },
+        { id: "4", label: "MN", url: "http://arcgisnycwcsql/ArcGIS/rest/services/st/mn_st/MapServer" }
+    ],
+    "dynamicMaps": [
+        {id:1, label: "APS", visible: true, 
+            url: "http://cmvpdev:6080/arcgis/rest/services/APS/APS_Test/MapServer"},
+    ],
+    "geometryService": "http://cmvpdev:6080/arcgis/rest/services/Utilities/Geometry/GeometryServer",
+    "geocodingService": "http://arcgisnycwcsql/ArcGIS/rest/services/Geocoder/mn_geocoder/GeocodeServer",
+    "initialZoom": 1,
+    "serverVersion": 10.0
+}

@@ -1,0 +1,348 @@
+/*.nihilo .dijitBorderContainer {
+ background-color:#1d2123;
+ }
+
+ .nihilo .dijitBorderContainer-child {
+ border: 1px solid #2d3133;
+ }
+
+ .nihilo .dijitBorderContainer-dijitContentPane {
+ background-color: #2d3133;
+ }
+
+ .nihilo .dijitToolbar {
+ background:none;
+ }
+
+ .nihilo .dijitAccordionContainer {
+ background:none;
+ }
+
+ .nihilo .dijitAccordionContainer-dijitContentPane {
+ background: none;
+ color: #EEEEEE;
+ }
+
+ .nihilo .dijitTreeLabel {
+ font-size: 0.95em;
+ font-family:monospace;
+ }
+
+ .nihilo .dijitGutterV {
+ width: 3px;
+ }
+ .nihilo .dijitSplitterV {
+ width: 3px;
+ }
+
+ .nihilo .dijitGutterH {
+ height: 3px;
+ }
+
+ .nihilo .dijitSplitterH {
+ height: 3px;
+ }
+*/
+
+.busy-node-loading {
+    background-image: url('../widgets/images/icon-loading-sm.gif');
+    background-repeat: no-repeat;
+    width: 12px;
+    height: 12px;
+}
+
+div.loading {
+    background-image: url('../widgets/images/spinner-small.gif');
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+.text-enabled {
+    font-style: normal;
+}
+.text-disabled {
+    font-style: italic;
+    color: #AAAAAA;
+}
+.navigation-tools {
+    float: right;
+    display: inline-block;
+}
+.measureIcon {
+    background-image: url(../widgets/images/MActionMeasure.png);
+    background-repeat: no-repeat;
+    width:24px;height:24px;text-align:center;background-position:0 0;
+}
+.identifyIcon {
+    background-image: url(../widgets/images/MActionIdentify.png);
+    background-repeat: no-repeat;
+    width:24px;height:24px;text-align:center;background-position:0 0;
+}
+.overviewIcon {
+    background-image: url(../widgets/images/overview.png);
+    background-repeat: no-repeat;
+    width:24px;height:24px;text-align:center;background-position:0 0;
+}
+
+/*********** ROI Selector ICONS *******************/
+.roiSelector .polyIcon {
+    background-image: url(../widgets/images/polygon.png);
+    background-repeat: no-repeat;
+    width:24px;height:24px;text-align:center;background-position:0 0;
+}
+.roiSelector .rectangleIcon {
+    background-image: url(../widgets/images/square.png);
+    background-repeat: no-repeat;
+    width:24px;height:24px;text-align:center;background-position:0 0;
+}
+.roiSelector .ellipseIcon {
+    background-image: url(../widgets/images/ellipse.png);
+    background-repeat: no-repeat;
+    width:24px;height:24px;text-align:center;background-position:0 0;
+}
+.roiSelector .clearIcon {
+    background-image: url("../widgets/images/clear.png");
+    background-repeat: no-repeat;
+    width:24px;height:24px;text-align:center;background-position:0 0;
+}
+
+.floater {
+    width: 300px;
+    position: absolute;
+    display: block;
+    top: 50%;
+    right: 50%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0);
+}
+.floater-header {
+    padding: 0.3em;
+    /*background-color: #444444;*/
+    color: #FFFFFF;
+    line-height: 20px;
+    padding-left: 6px;
+    border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    -o-border-radius: 5px 5px 0px 0px;
+    cursor: default;
+    border: 1px solid #444444;
+    border-bottom: none;
+}
+.floater-close {
+    float: right;
+    width: 14px;
+    height: 14px;
+    background: url("../widgets/images/tabClose.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.floater-close:hover {
+    border: 1px solid #888888;
+}
+.floater-content {
+    min-height: 120px;
+    border: 1px solid #555;
+    background-color: #EFEFEF;
+    box-shadow: 0 0 3px #777777;
+    font-size: small;
+    padding: 6px;
+}
+
+
+.toctreenode {
+    font-size: small;
+}
+
+.toctreenode .dijitFolderClosed {
+    background: url("../widgets/images/layers_sm.png") no-repeat top;
+}
+
+.toctreenode .dijitFolderOpened {
+    background: url("../widgets/images/layers_sm.png") no-repeat top;
+}
+
+.legend {
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 3.0em;
+}
+.legend-item {
+    line-height: 1em;
+    vertical-align: middle;
+    list-style: none;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    clear: left;
+    margin-bottom: 0.5em;
+}
+.legend-item img {
+    height: 1em;
+    float: left;
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+
+/*   Navigation toolbar */
+.panIcon {
+    background-image: url(../widgets/images/MActionPan.png);
+    width: 24px;
+    height: 24px;
+}
+.zoominIcon {
+    background-image: url(../widgets/images/MActionZoomIn.png);
+    width: 24px;
+    height: 24px;
+}
+.zoomoutIcon {
+    background-image: url(../widgets/images/MActionZoomOut.png);
+    width: 24px;
+    height: 24px;
+}
+.zoomfullextIcon {
+    background-image: url(../widgets/images/MActionZoomFullExtent.png);
+    width: 24px;
+    height: 24px;
+}
+.zoomprevIcon {
+    background-image: url(../widgets/images/MActionZoomLast.png);
+    width: 24px;
+    height: 24px;
+}
+.zoomnextIcon {
+    background-image: url(../widgets/images/MActionZoomNext.png);
+    width: 24px;
+    height: 24px;
+}
+.deactivateIcon {
+    background-image: url(../widgets/images/nav_decline.png);
+    width: 16px;
+    height: 16px;
+}
+
+.layerSelector .dojoxListInput {
+    border: 1px solid #ccc;
+    background-color: #efefef;
+    height: auto !important;
+    overflow: auto;
+    position: relative
+}
+.layerSelector .dojoxListInput ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0
+}
+.layerSelector .dijitDialogCloseIcon {
+    display: none;
+}
+.layerSelector .dojoxListInputClosable .dijitDialogCloseIcon {
+    display: inline;
+}
+.layerSelector .dojoxListInputClosable {
+    padding-right: 18px !important
+}
+.layerSelector .dojoxListInputItem {
+    float: left;
+    margin: 1px 5px 1px 1px;
+    padding: 0
+}
+.layerSelector .dojoxListInputItem .closeText {
+    display: none;
+    position: absolute;
+}
+.layerSelector .dojoxListInputItem .dijitDialogCloseIcon {
+    right: auto !important;
+    border: 0 !important;
+    padding: 0 !important;
+}
+.layerSelector .dojoxListInputMatch {
+    border: 1px solid #5EB55E;
+    background-color: #efffef;
+    position: relative;
+}
+.layerSelector .dojoxListInputMismatch {
+    border: 1px solid #B55E5E;
+    background-color: #ffefef
+}
+.layerSelector .dojoxListInput.dojoxListInputFocused {
+    border: 1px solid #000;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background-color: #fff
+}
+.layerSelector .dojoxListInputNode {
+    cursor: text;
+}
+.layerSelector .dojoxListInput .dijitTextBox {
+    background: #efefef !important;
+    border: 0 !important;
+}
+.layerSelector .dojoxListInputFocused .dijitTextBox {
+    background: #fff !important;
+    border: 0 !important;
+}
+.layerSelector .dojoxListInputItem .dijitTextBox {
+    width: auto !important;
+    border: 0 !important;
+}
+.layerSelector .dojoxListInputNode {
+    float: none;
+}
+.layerSelector .dojoxListInputItemEdited {
+    display: none !important
+}
+.layerSelector .dojoxListInputItem .dijitInline {
+    display: inline !important
+}
+
+
+/******** Bookmarks **********************/
+.bookmark-wrapper {
+    max-height: 500px;
+    max-width: 400px;
+    overflow-y: scroll;
+    position: relative;
+    background-color: transparent;
+    min-width: 250px;
+    min-height: 250px;
+    display: block;    
+}
+.bookmark-tree-row-leaf {
+    margin-bottom: 1px;
+    text-decoration:underline;
+    cursor: pointer;
+}
+.bookmark-tree-row-node {
+    margin-bottom: 1px;    
+}
+.bookmark-tree-row .dijitTreeExpando {
+}
+.bookmarks-popup-table {
+    font-size: 0.8em;
+}
+.bookmarks-popup-table td {
+    padding: 1px;
+}
+
+/***************** Basemap Toggler ************/
+.basemap-toggler {
+    display:table;
+    width:100%;
+    height: 100%;
+}
+.basemap-toggler .menu {
+    margin-bottom: 1em;
+}
+.basemap-toggler .slider-container {
+    width: 100%;
+}
+.basemap-toggler .slider-container .heading{
+    color:#999;   
+}

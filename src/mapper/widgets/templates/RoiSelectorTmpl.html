@@ -1,0 +1,29 @@
+<div class="roiSelector">
+    <div data-dojo-type="dijit/Toolbar">
+        
+        <div data-dojo-attach-point="rectangle" data-dojo-type="dijit/form/Button" data-dojo-props="iconClass:'rectangleIcon', showLabel:false">
+            Rectangle
+        </div>
+        <div data-dojo-attach-point="polygon" data-dojo-type="dijit/form/Button" data-dojo-props="iconClass:'polyIcon', showLabel:false">
+            Polygon
+        </div>
+        <div data-dojo-attach-point="ellipse" data-dojo-type="dijit.form.Button" data-dojo-props="iconClass:'ellipseIcon', showLabel:false">
+            Ellipse
+        </div>
+        
+        <div data-dojo-type="dijit/form/DropDownButton" id="bookmarkDDButton">
+            <div>
+                <img src="./images/bookmark-icon.png" />
+            </div>
+            <div data-dojo-type="dijit/TooltipDialog" id="bookmarkDialog">
+                <div class="bookmark-wrapper">
+                    <div data-dojo-attach-point="bookmarks_wrapper"></div>
+                </div>
+            </div>
+        </div>
+                        
+        <div data-dojo-attach-point="clear" data-dojo-type="dijit.form.Button" data-dojo-props="iconClass:'clearIcon', showLabel:false">
+            Clear
+        </div>
+    </div>
+</div>

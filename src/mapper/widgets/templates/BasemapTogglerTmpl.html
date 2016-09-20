@@ -1,0 +1,22 @@
+<div class="basemap-toggler">
+    <div class="menu" data-dojo-type="dijit/Menu" data-dojo-attach-point="selectMenu"></div>
+    <table class="slider-container">
+        <tr><td colspan="3" class="heading">Opacity</td></tr> 
+        <tr>
+            <td>0</td>
+            <td>
+                <div class="slider"
+                    data-dojo-attach-point="opacitySlider"
+                    data-dojo-type="dijit/form/HorizontalSlider"
+                    data-dojo-props="value:100,
+                            minimum:10,
+                            maximum:100,
+                            discreteValues:9,
+                            intermediateChanges:false,
+                            showButtons:false">
+                </div>
+            </td>
+            <td>100</td>
+        </tr>
+    </table>
+</div>

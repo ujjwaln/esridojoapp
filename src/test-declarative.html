@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ConEdison NetMap GIS Viewer - Test</title>
+        <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/dojo/dijit/themes/tundra/tundra.css">
+        <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css">
+        <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/dojo/dijit/themes/nihilo/nihilo.css">
+        <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/dojo/dijit/themes/soria/soria.css">
+        <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/esri/css/esri.css">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="./mapper/css/styles.css">
+        <style>
+            html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                overflow: hidden;
+            }
+            #borderContainer {
+                width: 100%;
+                height: 100%;
+            }
+            @import "http://js.arcgis.com/3.9/js/dojo/dojox/form/resources/BusyButton.css";
+            @import "http://js.arcgis.com/3.9/js/dojo/dojox/form/resources/CheckedMultiSelect.css";
+            @import "http://js.arcgis.com/3.9/js/dojo/dojox/grid/resources/Grid.css";
+            @import "http://js.arcgis.com/3.9/js/dojo/dojox/grid/resources/nihiloGrid.css";
+            
+            .dojoxGrid table {
+                font-size:0.8em;
+            }
+        </style>
+
+        <!-- floating pane styles from http://archive.dojotoolkit.org/nightly/dojotoolkit/dojox/layout/tests/test_FloatingPane.html -->         
+        <style type="text/css">
+            @import "http://js.arcgis.com/3.9/js/dojo/dojox/layout/resources/FloatingPane.css";
+            @import "http://js.arcgis.com/3.9/js/dojo/dojox/layout/resources/ResizeHandle.css";
+        </style>
+    
+        <!-- setup dojo amd path to load app resources -->
+        <script>
+            var basePath = location.pathname.replace(/\/[^/]+$/, "");
+            var dojoConfig = {
+                parseOnLoad : true,
+                async : true,
+                isDebug : false,
+                packages : [{
+                    location : basePath + "/mapper",
+                    name : "mapper"
+                }]
+            };
+        </script>
+        <!-- load esri jsapi -->
+        <script src="http://js.arcgis.com/3.9/"></script>
+        
+        <!-- load the app -->
+        <script src="mapper/mapper.js"></script>
+    </head>
+    
+    <body class="nihilo">
+        <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'sidebar', gutters:true, liveSplitters:true" 
+        	id="borderContainer">
+            <div style="overflow:hidden" 
+                data-dojo-type="dijit.layout.ContentPane" data-dojo-props="splitter:true,region:'center'" id="centerContentPane">
+                <div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="splitter:false,region:'top'" id="headerContentPane">
+                    <div class='header' style="float:left;display:inline-block">
+                        <span class='title'>Map designed declaratively</span>
+                    </div>
+                    <div data-dojo-type="mapper.widgets.Nav" data-dojo-props="mapId:'theMap1'" 
+                    	style="float:right;margin-left:6px; margin-right:36px"></div>
+                    <div data-dojo-type="mapper.widgets.Maptools" data-dojo-props="mapId:'theMap1',tocId:'toc1'"></div>
+                </div>
+                
+                <div data-dojo-type="mapper.widgets.CustomMap" 
+                    style="width:100%;height:100%;float:left;" id="theMap1"
+                    data-dojo-props="zoom:13,center:[-74, 40.7],dynamicMapServices:[
+                      {alias: 'Highway', url: 'http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Specialty/ESRI_StateCityHighway_USA/MapServer'}
+                    ]">
+                </div>
+                
+                <div data-dojo-type="dijit/form/DropDownButton" style="position:absolute;top:40px;right:20px;width:48px;height:24px;">
+	                <div><img src="mapper/widgets/images/layers.jpg"></div>
+	                <div data-dojo-type="dijit/TooltipDialog">
+	                    <div data-dojo-type="mapper.widgets.BasemapToggler" id="basemapToggler1"
+	                        data-dojo-props="title:'map 1',mapId:'theMap1',showGoogleBasemaps:true,showArcGISBasemaps:true,
+	                        selectedBasemap:'Light gray canvas'">
+	                    </div>
+	                </div>
+               </div>	
+                <!-- div data-dojo-type="mapper.widgets.CustomMap" 
+                    style="width:100%;height:100%;float:left;" id="theMap1"
+                    data-dojo-props="zoom:13,center:[-74, 40.7],dynamicMapServices:[
+                      {alias: 'Gas', url: 'http://cmvpdev:6080/arcgis/rest/services/Gas/GasWebDynamic/MapServer'}
+                    ]">
+                </div -->
+                
+                <!-- div data-dojo-type="mapper.widgets.CustomMap" 
+                    style="width:100%;height:100%;float:left;" id="theMap1"
+                    data-dojo-props="zoom:13,center:[-74, 40.7],dynamicMapServices:[
+                      {alias: 'MN', url: 'http://cmvpdev:6080/arcgis/rest/services/netmap/mn_indLayers_shp_mpri/MapServer'},
+                      {alias: 'BK', url: 'http://cmvpdev:6080/arcgis/rest/services/netmap/bk_indLayers_shp_mpri/MapServer'}
+                    ]">
+                </div -->
+            </div>
+            <div data-dojo-type="dijit/layout/AccordionContainer" style="width:300px" data-dojo-props="region:'right',splitter:true">
+                <div data-dojo-type="dijit/layout/ContentPane" title="Layers">
+                    <div data-dojo-type="mapper.widgets.Toc" id="toc1"
+                     data-dojo-props="mapId:'theMap1'" style="width: 100%;overflow:auto;"></div>
+                </div>
+                <div data-dojo-type="dijit/layout/ContentPane" title="Search">
+                    <div data-dojo-type="mapper.widgets.maptools.FindTool" data-dojo-props="tocId: 'toc1',mapId: 'theMap1'"></div>
+                    <!-- div data-dojo-type="mapper.widgets.maptools.QueryTool" data-dojo-props="mapId: 'theMap1'"></div -->
+                </div>
+                <div data-dojo-type="dijit/layout/ContentPane" title="Bookmarks">
+                    <!-- div data-dojo-type="mapper.widgets.maptools.Bookmarks" data-dojo-props="tocId: 'toc1',mapId: 'theMap1'"></div -->
+                </div>
+            </div>
+            <div data-dojo-type="dojox.layout.ExpandoPane" style="width:350px;" id="epResults"
+                data-dojo-props="title:'Results', height:180, splitter:true, region:'bottom', startExpanded:false">
+                <div id="tcResults" data-dojo-type="mapper.widgets.Resulter" 
+                    data-dojo-props="region:'bottom'" tabstrip="true", style="height:180px"></div>
+            </div>
+            
+        </div>
+    </body>
+</html>

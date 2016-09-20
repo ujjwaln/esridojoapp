@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Area Profile System</title>
+        <meta name="description" content="Area Profile System">
+        <meta name="author" content="narayanu">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--- Mapper setup -->
+        <!-- link rel="stylesheet" href="http://js.arcgis.com/3.9/js/dojo/dijit/themes/tundra/tundra.css" -->
+        <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/dojo/dijit/themes/soria/soria.css">
+        <!-- link rel="stylesheet" href="http://js.arcgis.com/3.9/js/dojo/dijit/themes/claro/claro.css">
+        <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/dojo/dijit/themes/nihilo/nihilo.css" -->
+        
+        <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/esri/css/esri.css">
+        <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/dojo/dojox/form/resources/BusyButton.css">
+        <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/dojo/dojox/grid/resources/Grid.css">
+        <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/dojo/dojox/grid/resources/soriaGrid.css">
+        <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/dojo/dojox/layout/resources/ExpandoPane.css">
+        <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/dojo/dojox/layout/resources/FloatingPane.css">
+        <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/dojo/dojox/layout/resources/ResizeHandle.css">
+        
+        <link rel="stylesheet" href="./mapper/css/styles.css">
+        <link rel="stylesheet" href="./mapper/css/aps.css">
+        
+        <!-- setup dojo amd path to load app resources -->
+        <script>
+            var basePath = location.pathname.replace(/\/[^/]+$/, "");
+            //var basePath = "http://127.0.0.1:8020/mapper_v1/src";
+            var dojoConfig = {
+                parseOnLoad : true,
+                async : true,
+                isDebug : false,
+                packages : [{
+                    location : basePath + "/mapper",
+                    name : "mapper"
+                }]
+            };
+        </script>
+        <!-- load esri jsapi -->
+        <script src="http://js.arcgis.com/3.9/"></script>
+        <!-- load the app -->
+        <script src="./mapper/mapper.js"></script>
+    </head>
+
+    <body class="soria">
+        <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'sidebar', gutters:true, liveSplitters:true" id="borderContainer">
+            
+            <div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="splitter:false,region:'top'" id="headerContentPane">
+                <div class='header'>
+                    <img src="./mapper/widgets/images/coned.jpg" />
+                    <span class='title'>Area Profile System</span>
+                </div>
+            </div>
+
+            <div data-dojo-type="dijit.layout.ContentPane"
+                data-dojo-props="splitter:true,region:'center'" id="centerContentPane">
+
+                <div style="float:left;width:100%" class="dijitToolbar">
+                    
+                    <div style="float:left;display:inline-block;margin-right:12px;" 
+                        data-dojo-type="mapper.widgets.Nav" data-dojo-props="mapId:'theMap1'"></div>
+                    
+                    <div style="float:left;display:inline-block;margin-right:12px;" 
+                        data-dojo-type="mapper.widgets.Maptools" data-dojo-props="mapId:'theMap1',tocId:'toc1'"></div>
+                     
+                    <div data-dojo-type="mapper.widgets.RoiSelector"
+                        id="roiSelector1" style="float:left;display:inline-block;margin-right:12px;" 
+                        data-dojo-props="
+                            mapId:'theMap1',
+                            tocId:'toc1',
+                            bookmarksUrl:'http://cmvpdev:6080/arcgis/rest/services/APS/APS_Boundary/MapServer'"></div>
+                        
+                   <!-- div class="dijit dijitToolbar" style="float:left;display:inline-block;"> moved to ROI Selector
+                       <div data-dojo-type="dijit/form/DropDownButton" id="bookmarkDDButton">
+                            <div>
+                                <img src="./mapper/widgets/images/bookmark-icon.png" />
+                            </div>
+                            <div data-dojo-type="dijit/TooltipDialog" id="bookmarkDialog">
+                                <div class="bookmark-wrapper">
+                                    <div data-dojo-type="mapper.widgets.Bookmarks"
+                                        data-dojo-props="mapId:'theMap1',ddButtonId:'bookmarkDDButton',url:'http://cmvpdev:6080/arcgis/rest/services/APS/APS_Boundary/MapServer'">
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                   </div -->
+                </div>
+                
+                <div data-dojo-type="mapper.widgets.CustomMap"
+                    style="width:100%;height:100%;display:inline-block;float:left;padding:0;margin:0" id="theMap1"
+                    data-dojo-props="zoom:14,center:[-73, 40.73],dynamicMapServices:[
+                        {alias: 'APS', url:'http://cmvpdev:6080/arcgis/rest/services/APS/APS_Test/MapServer'}]">
+                </div>
+                
+                <div data-dojo-type="dijit/form/DropDownButton" style="position:absolute;top:40px;right:10px">
+                    <div>
+                        <img src="./mapper/widgets/images/layers_sm.png" />
+                    </div>
+                    <div data-dojo-type="dijit/TooltipDialog" style="max-width:150px">
+                        <div data-dojo-type="mapper.widgets.BasemapToggler" id="basemapToggler1"
+                            data-dojo-props="
+                                        title:'',
+                                        mapId:'theMap1',
+                                        showGoogleBasemaps:false,
+                                        showArcGISBasemaps:true,
+                                        showConEdBasemaps:false,
+                                        showBingBasemaps: true,
+                                        bingMapsKey:'AtB3qEk2rEWoZOSyJOZ-UaVFY2m7RjsXcl8eS7On0fhv_2h72JYeh57ZKeCrEHoW',
+                                        selectedBasemap:'Bing Road'
+                                        "></div>
+                    </div>
+                </div>
+            </div>
+            <div data-dojo-type="dijit/layout/AccordionContainer" style="width:350px" data-dojo-props="region:'right',splitter:true">
+                <div data-dojo-type="dijit/layout/ContentPane" title="Layers">
+                    <div data-dojo-type="mapper.widgets.Toc" id="toc1" data-dojo-props="mapId:'theMap1'"></div>
+                </div>
+                <div data-dojo-type="dijit/layout/ContentPane" title="Search">
+                    <div data-dojo-type="mapper.widgets.QueryTool" class="queryPanel"
+                        data-dojo-props="tocId:'toc1',mapId:'theMap1',roiSelectorId:'roiSelector1'"></div>
+                </div>
+                <div data-dojo-type="dijit/layout/ContentPane" title="Reports">
+                    <p>Reports</p>
+                </div>
+            </div>
+            <div data-dojo-type="dojox.layout.ExpandoPane" id="epResults" title="Results"
+                data-dojo-props="height:180, splitter:true, region:'bottom', startExpanded:false">
+                <div id="tcResults" data-dojo-type="mapper.widgets.Resulter"
+                    data-dojo-props="region:'bottom'" tabstrip="true", style="height:180px"></div>
+            </div>
+        </div>
+    </body>
+</html>

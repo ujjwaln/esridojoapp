@@ -1,0 +1,20 @@
+<div class="layerSelector">
+    <div data-dojo-type="dijit/TooltipDialog" data-dojo-attach-point="theDialog">
+        <div class="dijitDialogPaneContentArea">
+            <div data-dojo-attach-point="fsMapServiceNode" style="width:100%"></div>
+            <br/>
+            <div data-dojo-attach-point="ckLayersNode" style="width:100%"></div>
+            <br/>
+            <label><input data-dojo-type="dijit/form/CheckBox" data-dojo-attach-point="inpVisibleOnly" checked="checked" />
+                Visible Only </label>
+            
+            <button data-dojo-type="dijit/form/Button" data-dojo-attach-point="cancelButton">
+                Cancel
+            </button>
+            
+            <button data-dojo-type="dijit/form/Button" type="submit" data-dojo-attach-point="okButton">
+                Select
+            </button>
+        </div>
+    </div>
+</div>
